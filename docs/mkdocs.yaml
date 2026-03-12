@@ -1,0 +1,10 @@
+site_name: ${{ values.service_name }}
+site_description: ${{ values.service_description }}
+repo_url: https://github.com/CCM-Tecnologia/${{ values.service_name }}
+edit_uri: edit/master/docs
+
+plugins:
+  - techdocs-core
+
+nav:
+  - Getting Started: "index.md"

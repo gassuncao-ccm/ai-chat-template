@@ -1,0 +1,18 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  title: ${{ values.service_name }}
+  name: ${{ values.service_slug }}
+  description: "${{ values.service_description }}"
+  annotations:
+    github.com/project-slug: CCM-Tecnologia/${{ values.service_slug }}
+    backstage.io/techdocs-ref: dir:./docs
+    sonarqube.org/project-key: ${{ values.service_slug }}
+  links:
+    - url: https://github.com/CCM-Tecnologia/${{ values.service_slug }}
+      title: GitHub
+      icon: github
+spec:
+  type: service
+  lifecycle: development
+  owner: ${{ values.service_owner }}
