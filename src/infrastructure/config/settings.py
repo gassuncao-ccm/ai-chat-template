@@ -1,5 +1,4 @@
 from pydantic_settings import BaseSettings, SettingsConfigDict
-from pydantic import computed_field
 from dotenv import load_dotenv
 load_dotenv()
 

@@ -12,6 +12,8 @@ dependencies = [
     "psycopg",
     "pydantic",
     "pytest",
+    "pytest_asyncio",
+    "ruff",
     "sqlmodel",
     "pydantic_settings",
     "uvicorn",

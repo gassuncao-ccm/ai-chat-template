@@ -1,9 +1,15 @@
 repos:
   - repo: local
     hooks:
+      - id: ruff
+        name: ruff
+        entry: uv run ruff check --fix
+        language: system
+        types: [python]
+        pass_filenames: true
       - id: pylint
         name: pylint
-        entry: pylint
+        entry: uv run pylint
         language: system
         types: [python]
         args:
@@ -13,11 +19,9 @@ repos:
             "--rcfile=.pylintrc",
             "--load-plugins=pylint.extensions.docparams",
           ]
-  - repo: local
-    hooks:
-      - id: requirements
-        name: requirements
-        entry: bash -c 'venv/bin/pip3 freeze > requirements.txt; git add requirements.txt'
+      - id: uv-lock
+        name: uv-lock
+        entry: bash -c 'uv lock; git add uv.lock'
         language: system
         pass_filenames: false
         stages: [pre-commit]
